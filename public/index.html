@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Preso.ly - Your Joly Presentation Experience</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+
+        <!-- Loading Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+
+        <!-- Loading Flat UI -->
+        <link href="css/flat-ui.css" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <!-- Le StyleSheets -->
+        <link href="css/style.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- Start of Woopra Code -->
+        <script type="text/javascript">
+            function woopraReady(tracker) {
+                tracker.setDomain('preso.ly');
+                tracker.setIdleTimeout(1800000);
+                tracker.track();
+                return false;
+            }
+            (function() {
+                var wsc = document.createElement('script');
+                wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+                wsc.type = 'text/javascript';
+                wsc.async = true;
+                var ssc = document.getElementsByTagName('script')[0];
+                ssc.parentNode.insertBefore(wsc, ssc);
+            })();
+        </script>
+        <!-- End of Woopra Code -->
+    </head>
+    <body>
+        <div class="mobile">
+            <div class="header"><img src="images/logo.png"/></div>
+            <div class="break-line"></div>
+            <div class="form-wrapper ">
+                <!-- Login Step 1 -->
+                <div class="login-form">
+                    <div class="ss-logo"><img src="images/slideshare-logo.png"/></div>
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="SlideShare Username" id="login-name">
+                        <label class="login-field-icon fui-man-16" for="login-name"></label>
+                    </div>
+
+                    <a id="log-in" class="btn btn-primary btn-large btn-block" href="#">Login</a>
+                </div>
+                <!-- End of Login -->
+
+            </div>
+            <div class="list-wrapper">
+                <!-- List All Presentations -->
+                <div class="list-pres span4"></div>
+
+            </div>
+            <div class="mini-player">
+                <div class="ss-player"></div>
+                <div class="controllers">
+                <a class="button" id="previous"><span class="arrow">◀</span></a>
+                <a class="button" id="next"><span class="arrow">▶</span></a>
+                <a class="button" id="first"><span class="arrow">◀◀<span></a>
+                <a class="button" id="last" ><span class="arrow">▶▶</span></a>
+                </div>
+            </div>
+
+        </div>
+        <div id="main">
+            <div id="player"></div>
+
+            <div id="main-app" class="container">
+
+                <div class="row">
+                    <div class="span12">
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <a href="#" class="logo"><img src="images/logo.png"/></a>
+
+                                <div class="sub-nav">
+                                    <div class="span2 sign-in">
+                                        <a href="#" class="btn btn-large btn-block btn-inverse ">Sign In</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /row -->
+                <div class="row qr-holder">
+                    <a href="#"  class="btn btn-large btn-block btn-primary fullscreen" onclick="goFullscreen('main'); return false">Trigger Fullscreen</a>
+                    <div class="qr-container">
+                        <div class="share mrl">
+
+                            <div id="qr-code" class="qr"></div>
+                            <a href="#" class="btn btn-large btn-block disabled">Scan QR to begin</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /container -->
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span7">
+                        <h3 class="footer-title">Early Adopter</h3>
+                        <p>Would you like to be the first to use preso.ly ?<br/>
+                            Subscribe to stay tuned.<br/>
+                        </p>
+                        <form action="http://meeneeme.us6.list-manage.com/subscribe/post" method="POST">
+                            <input type="hidden" name="u" value="f601f8de40">
+                            <input type="hidden" name="id" value="08687d3a1f">
+
+                            <div class="span3 subscribe-ipt">
+                                <input type="email" name="MERGE0" id="MERGE0"  value="" placeholder="donald@preso.ly" class="span3">
+
+                            </div>
+                            <div class="span3 subscribe-btn">
+
+                                <input type="submit" value="Subscribe" class="btn btn-block btn-primary" />
+                            </div>
+                        </form>
+                        <div class="span6 links subscribe-ipt">
+                            <span>&COPY; 2013 Preso.ly </span>
+                            <a href="http://www.preso.ly/help" /> Learn More</a>
+                            <a href="mailto:info@preso.ly" />Contact Us</a>
+                        </div>
+
+
+                    </div> <!-- /span8 -->
+
+                    <div class="span5">
+                        <div class="footer-banner">
+                            <h3 class="footer-title">Mentions</h3>
+                            <ul>
+                                <li><a href="http://arabnet.me/startup-demo-ideathon-finalists-arabnet-beirut-2013/" target="_BLANK">Arabnet - Startup Demo 2013 Finalist</a></li>
+                                <li><a href="http://blog.berytech.org/2012/07/23/startup-weekend-beirut-2012-recap/" target="_BLANK">Berytech - Sartup Weekend 2012</a></li>
+                                <li><a href="http://blogs.wsj.com/tech-europe/2012/07/10/middle-east-start-ups-thrive-in-beirut/" target="_BLANK">Wall Street Journal - ME Startups</a></li>
+                                <li><a href="http://arabnet.me/winners-startup-weekend-beirut/" target="_BLANK">Arabnet - Startup Weekend Beirut 2012</a></li>
+                                <li><a href="http://www.wamda.com/2012/07/what-stood-out-at-startup-weekend-beirut" target="_BLANK">Wamda - Sartup Weekend Beirut 2012</a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Load JS here for greater good =============================-->
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="js/jquery.dropkick-1.0.0.js"></script>
+        <script src="js/custom_checkbox_and_radio.js"></script>
+        <script src="js/custom_radio.js"></script>
+        <script src="js/jquery.tagsinput.js"></script>
+        <script src="js/bootstrap-tooltip.js"></script>
+        <script src="js/jquery.placeholder.js"></script>
+        <script src="js/xml2json.js"></script>
+        <script src="js/jquery.qrcode-0.2.min.js"></script>
+        <script src="http://vjs.zencdn.net/c/video.js"></script>
+        <script src="js/application.js"></script>
+        <script type="text/javascript">
+            
+            var app = {
+                init: function(){
+                    var type = this.getType();
+                    var host = window.location+'?sid=';
+                    if (type == 'screen'){
+                        var qrText = this.generateSerial(8);
+                
+                        $('#qr-code').qrcode({
+                            render: 'div',
+                            width: 300,
+                            height: 300,
+                            color: '#34495E',
+                            text: host+qrText 
+                        });
+                        this.socket(qrText, type);
+                    }
+                    else if( type == 'phone'){
+                        qrText = this.getURLParam('sid');
+                        if(qrText != "")
+                        this.socket(qrText, type);
+                    }
+                    
+                },
+                getURLParam: function (name) {
+                    return decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+                );
+                },
+                getType: function(){
+                    var width = $(window).width();
+                    if(width == '320' || width <= '586'){
+                        return 'phone';
+                    }
+                    else{
+                        return 'screen';
+                    }
+                },
+                generateSerial: function(len){
+                    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+                    var string_length = len;
+                    var randomstring = '';
+
+                    for (var x=0;x<string_length;x++) {
+
+                        var letterOrNumber = Math.floor(Math.random() * 2);
+                        if (letterOrNumber == 0) {
+                            var newNum = Math.floor(Math.random() * 9);
+                            randomstring += newNum;
+                        } else {
+                            var rnum = Math.floor(Math.random() * chars.length);
+                            randomstring += chars.substring(rnum,rnum+1);
+                        }
+
+                    }
+                    return randomstring;
+                },
+                socket: function(sid, type){
+                   
+                    var iosocket = io.connect();
+
+                    iosocket.on('connect', function () {
+                        //console.log(sid);
+                        iosocket.emit("sync", {"type":type,"sid":sid});
+                    });
+                    iosocket.on('disconnect', function() {
+                        // console.log('disconnected');
+                    });
+                    iosocket.on('starting-show', function(data){
+                        console.log(data.sid);
+                        $("#main-app").hide();
+                        var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+data.pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
+                        $("#player").append(iframe);
+                       
+                    });
+                    
+                     
+                    iosocket.on('first', function(data) {
+                        sendAPIMessage('first');
+                        console.log("first slide");
+                    });
+
+                    iosocket.on('previous', function(data) {
+                        sendAPIMessage('previous');
+                        console.log("previous slide");
+                    });
+                                
+                    iosocket.on('next', function(data) {
+                        sendAPIMessage('next');
+                        console.log("next slide");
+                    });
+                                
+                    iosocket.on('last', function(data) {
+                        sendAPIMessage('last');
+                    });
+                                
+                                
+                    // register handler to receive messages
+                    $(window).bind('message', receiveAPIMessage);
+    
+                    // Bind handlers to buttons
+                    $.each({
+                        "first" : function(){
+                            sendAPIMessage('first');
+                            iosocket.emit("first", {"sid":sid});
+                        },
+                        "previous" : function(e){
+                            sendAPIMessage('previous');
+                            iosocket.emit("previous", {"sid":sid});
+    
+                        },
+                        "next" : function(e){
+                            sendAPIMessage('next');
+                            iosocket.emit("next", {"sid":sid});
+                        },
+                        "last" : function(){
+                            sendAPIMessage('last');
+                            iosocket.emit("last", {"sid":sid});
+                        }
+                    }, function(key,handler){
+                        $('#' + key).bind('click', handler)
+                    });
+                    
+                    $('#log-in').click(function(e){
+                        e.preventDefault();
+                        var btn = $(this);
+                        var username = $("#login-name").val();
+                        iosocket.emit("login", {"username":username});
+                        $(this).addClass('disabled');
+                        $(this).text("loading...");
+                        iosocket.on('presentations', function(data){
+                            $(btn).text("success...");
+                            $(".login-form").delay(200).fadeOut(200);
+                            console.log(data);
+                            var presentations = data.User.Slideshow;
+                            //console.log(presentations);
+                            $.each(presentations, function(i, item) {
+                                var block = '<div class="span4 block">';
+                                block += '<div class="tile">';
+                                block += '<img class="tile-image big-illustration" alt="" src="'+presentations[i].ThumbnailSmallURL+'">'
+                                block += '<h3 class="tile-title">'+presentations[i].Title+'</h3>';
+                                block += '<p>'+ presentations[i].Description +'</p>';
+                                block += '<a class="btn btn-primary btn-large btn-block present" data-id="'+presentations[i].ID+'">Present</a>';
+                                block += '</div></div>';
+                                $('.list-pres').append(block);
+                            });
+                            
+                            $(".list-pres").delay(500).fadeIn();
+                            
+                            $('.present').click(function(e){
+                                e.preventDefault();
+                                var pid = $(this).data('id');
+                                iosocket.emit("present", {"sid":sid,"pid": pid});
+                                $(".list-pres").hide();
+                                $(".mini-player").fadeIn(333);
+                                var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()*50/100+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
+                                $(".ss-player").append(iframe);
+                       
+                            });
+                        });
+                    });
+                }
+            }
+            function goFullscreen(id){
+                var element = document.getElementById(id);
+    
+    
+                if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullScreen) {
+                    element.webkitRequestFullScreen();
+                }
+            }
+            // Method to send postmessage calls to iframe
+            function sendAPIMessage(messageName, message){
+                var payload = messageName;
+                if (message){
+                    payload = payload + '_' + message;
+                }
+                // pick up the slideshare iframe and send messages to it
+                $('#slideshare_iframe').get(0).contentWindow.postMessage(payload,'*');
+                
+            }
+  
+  
+            // Method to receive postmessage calls from iframe
+            function receiveAPIMessage(e){
+                // get message value out of jQuery event
+                var message = e.originalEvent.data;
+                // break it apart in to messagename and values
+                var messageComponents = message.split('_');
+                var messageName = messageComponents[0];
+                var values = messageComponents.slice(1);
+    
+                // log to message box. Change this part to your desired functionality
+                var stringDebugMessage = "Message <b>" + messageName + "</b> received";
+                if (values.length){
+                    stringDebugMessage += " with values " + values.join(', ');
+                }
+    
+                $('#msg').prepend( stringDebugMessage + '<br/>');
+            }
+            function parseXml(xml) {
+                var dom = null;
+                if (window.DOMParser) {
+                    try { 
+                        dom = (new DOMParser()).parseFromString(xml, "text/xml"); 
+                    } 
+                    catch (e) { dom = null; }
+                }
+                else if (window.ActiveXObject) {
+                    try {
+                        dom = new ActiveXObject('Microsoft.XMLDOM');
+                        dom.async = false;
+                        if (!dom.loadXML(xml)) // parse error ..
+
+                        window.alert(dom.parseError.reason + dom.parseError.srcText);
+                } 
+                catch (e) { dom = null; }
+            }
+            else
+                alert("cannot parse xml string!");
+            return dom;
+        }
+                
+        jQuery(function($){
+            app.init();    
+                
+        });
+        </script>
+        <!--[if lt IE 8]>
+          <script src="js/icon-font-ie7.js"></script>
+          <script src="js/icon-font-ie7-24.js"></script>
+        <![endif]-->
+    </body>
+</html>
+
+<!--
+Created: Array[1]
+Description: Array[1]
+Download: Array[1]
+DownloadUrl: Array[1]
+Embed: Array[1]
+Format: Array[1]
+ID: Array[1]
+InContest: Array[1]
+Language: Array[1]
+SlideshowType: Array[1]
+Status: Array[1]
+ThumbnailSmallURL: Array[1]
+ThumbnailURL: Array[1]
+Title: Array[1]
+URL: Array[1]
+Updated: Array[1]
+Username: Array[1]
+-->

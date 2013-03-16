@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Preso.ly</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Loading Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+
+        <!-- Loading Flat UI -->
+        <link href="css/flat-ui.css" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <!-- Le StyleSheets -->
+        <link href="css/style.css" rel="stylesheet">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- Start of Woopra Code -->
+        <script type="text/javascript">
+            function woopraReady(tracker) {
+                tracker.setDomain('preso.ly');
+                tracker.setIdleTimeout(1800000);
+                tracker.track();
+                return false;
+            }
+            (function() {
+                var wsc = document.createElement('script');
+                wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+                wsc.type = 'text/javascript';
+                wsc.async = true;
+                var ssc = document.getElementsByTagName('script')[0];
+                ssc.parentNode.insertBefore(wsc, ssc);
+            })();
+        </script>
+        <!-- End of Woopra Code -->
+    </head>
+    <body>
+        <div class="mobile">
+            <div class="header"><img src="images/logo.png"/></div>
+            <div class="form-wrapper">
+                <!-- Login Step 1 -->
+                <div class="login-form">
+                    <div class="ss-logo"><img src="images/slideshare-logo.png"/></div>
+                    <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="SlideShare Username" id="login-name">
+                        <label class="login-field-icon fui-man-16" for="login-name"></label>
+                    </div>
+
+                    <a id="log-in" class="btn btn-primary btn-large btn-block" href="#">Login</a>
+                </div>
+                <!-- End of Login -->
+
+                <!-- List All Presentations -->
+                <div class="list-pres">
+                    <div id="carousel">
+                        <div class="list">
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="main">
+            <div class="container">
+
+                <div class="row">
+                    <div class="span12">
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <a href="#" class="logo"><img src="images/logo.png"/></a>
+
+                                <div class="sub-nav">
+                                    <div class="span2 sign-in">
+                                        <a href="#" class="btn btn-large btn-block btn-inverse ">Sign In</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /row -->
+                <div class="row qr-holder">
+                    <a href="#"  class="btn btn-large btn-block btn-primary fullscreen" onclick="goFullscreen('main'); return false">Trigger Fullscreen</a>
+                    <div class="qr-container">
+                        <div class="share mrl">
+
+                            <div id="qr-code" class="qr"></div>
+                            <a href="#" class="btn btn-large btn-block disabled">Scan QR to begin</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /container -->
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span7">
+                        <h3 class="footer-title">Early Adopter</h3>
+                        <p>Would you like to be the first to use preso.ly ?<br/>
+                            Subscribe to stay tuned.<br/>
+                        </p>
+                        <form action="http://meeneeme.us6.list-manage.com/subscribe/post" method="POST">
+                            <input type="hidden" name="u" value="f601f8de40">
+                            <input type="hidden" name="id" value="08687d3a1f">
+
+                            <div class="span3 subscribe-ipt">
+                                <input type="email" name="MERGE0" id="MERGE0"  value="" placeholder="donald@preso.ly" class="span3">
+
+                            </div>
+                            <div class="span3 subscribe-btn">
+
+                                <input type="submit" value="Subscribe" class="btn btn-block btn-primary" />
+                            </div>
+                        </form>
+                        <div class="span6 links subscribe-ipt">
+                            <span>&COPY; 2013 Preso.ly </span>
+                            <a href="http://www.preso.ly/help" /> Learn More</a>
+                            <a href="mailto:info@preso.ly" />Contact Us</a>
+                        </div>
+
+
+                    </div> <!-- /span8 -->
+
+                    <div class="span5">
+                        <div class="footer-banner">
+                            <h3 class="footer-title">Mentions</h3>
+                            <ul>
+                                <li><a href="http://arabnet.me/startup-demo-ideathon-finalists-arabnet-beirut-2013/" target="_BLANK">Arabnet - Startup Demo 2013 Finalist</a></li>
+                                <li><a href="http://blog.berytech.org/2012/07/23/startup-weekend-beirut-2012-recap/" target="_BLANK">Berytech - Sartup Weekend 2012</a></li>
+                                <li><a href="http://blogs.wsj.com/tech-europe/2012/07/10/middle-east-start-ups-thrive-in-beirut/" target="_BLANK">Wall Street Journal - ME Startups</a></li>
+                                <li><a href="http://arabnet.me/winners-startup-weekend-beirut/" target="_BLANK">Arabnet - Startup Weekend Beirut 2012</a></li>
+                                <li><a href="http://www.wamda.com/2012/07/what-stood-out-at-startup-weekend-beirut" target="_BLANK">Wamda - Sartup Weekend Beirut 2012</a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Load JS here for greater good =============================-->
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="js/jquery.dropkick-1.0.0.js"></script>
+        <script src="js/custom_checkbox_and_radio.js"></script>
+        <script src="js/custom_radio.js"></script>
+        <script src="js/jquery.tagsinput.js"></script>
+        <script src="js/bootstrap-tooltip.js"></script>
+        <script src="js/jquery.placeholder.js"></script>
+        <script src="js/jquery.hammer.min.js"></script>
+        <script src="js/jquery.qrcode-0.2.min.js"></script>
+        <script src="js/application.js"></script>
+        <script type="text/javascript">
+            
+            var app = {
+                init: function(){
+                    var type = this.getType();
+                    var host = 'http://192.168.1.105:8080/?sid=';
+                    if (type == 'screen'){
+                        var qrText = this.generateSerial(8);
+                
+                        $('#qr-code').qrcode({
+                            render: 'div',
+                            width: 300,
+                            height: 300,
+                            color: '#34495E',
+                            text: host+qrText 
+                        });
+                        this.socket(qrText, type);
+                    }
+                    else if( type == 'phone'){
+                        qrText = this.getURLParam('sid');
+                        this.socket(qrText, type);
+                    }
+                    
+                },
+                getURLParam: function (name) {
+                    return decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+                );
+                },
+                getType: function(){
+                    var width = $(window).width();
+                    if(width == '320' || width == '400'){
+                        return 'phone';
+                    }
+                    else{
+                        return 'screen';
+                    }
+                },
+                generateSerial: function(len){
+                    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+                    var string_length = len;
+                    var randomstring = '';
+
+                    for (var x=0;x<string_length;x++) {
+
+                        var letterOrNumber = Math.floor(Math.random() * 2);
+                        if (letterOrNumber == 0) {
+                            var newNum = Math.floor(Math.random() * 9);
+                            randomstring += newNum;
+                        } else {
+                            var rnum = Math.floor(Math.random() * chars.length);
+                            randomstring += chars.substring(rnum,rnum+1);
+                        }
+
+                    }
+                    return randomstring;
+                },
+                socket: function(sid, type){
+                   
+                    var iosocket = io.connect();
+
+                    iosocket.on('connect', function () {
+                        //console.log(sid);
+                        iosocket.emit("sync", {"type":type,"sid":sid});
+                    });
+                    iosocket.on('disconnect', function() {
+                        // console.log('disconnected');
+                    });
+                    
+                    $('#log-in').click(function(e){
+                        e.preventDefault();
+                        var btn = $(this);
+                        var username = $("#login-name").val();
+                        iosocket.emit("login", {"username":username});
+                        $(this).addClass('disabled');
+                        $(this).text("loading...");
+                        iosocket.on('presentations', function(data){
+                            $(btn).text("success...");
+                            $(".login-form").delay(200).fadeOut(100);
+                            var presentations =data.User.Slideshow;
+                            
+                            $.each(presentations, function(i, item) {
+                                var block = '<div class="pres-block span3">';
+                                block += '<div class="tile">';
+                                block += '<img class="tile-image big-illustration" alt="" src="'+presentations[i].ThumbnailSmallURL+'">'
+                                block += '<h3 class="tile-title">'+presentations[i].Title+'</h3>';
+                                block += '<p>'+ presentations[i].Description +'</p>';
+                                block += '<a class="btn btn-primary btn-large btn-block" id="pid-'+presentations[i].ID+'" href="#">Present</a>';
+                                block += '</div></div>';
+                                $('.list').append(block);
+                                
+                            });
+                            $('.list-pres').delay(500).fadeIn(300);
+                            
+                           
+                        });
+                    })
+                }
+            }
+            function goFullscreen(id){
+                var element = document.getElementById(id);
+    
+    
+                if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullScreen) {
+                    element.webkitRequestFullScreen();
+                }
+            }
+            function parseXml(xml) {
+                var dom = null;
+                if (window.DOMParser) {
+                    try { 
+                        dom = (new DOMParser()).parseFromString(xml, "text/xml"); 
+                    } 
+                    catch (e) { dom = null; }
+                }
+                else if (window.ActiveXObject) {
+                    try {
+                        dom = new ActiveXObject('Microsoft.XMLDOM');
+                        dom.async = false;
+                        if (!dom.loadXML(xml)) // parse error ..
+
+                        window.alert(dom.parseError.reason + dom.parseError.srcText);
+                } 
+                catch (e) { dom = null; }
+            }
+            else
+                alert("cannot parse xml string!");
+            return dom;
+        }
+                
+        jQuery(function($){
+            app.init();    
+                
+        });
+        
+        (function() {
+            var lastTime = 0;
+            var vendors = ['ms', 'moz', 'webkit', 'o'];
+            for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+                window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+                window.cancelAnimationFrame =
+                    window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+            }
+
+            if (!window.requestAnimationFrame)
+                window.requestAnimationFrame = function(callback, element) {
+                    var currTime = new Date().getTime();
+                    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                    var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                    timeToCall);
+                    lastTime = currTime + timeToCall;
+                    return id;
+                };
+
+            if (!window.cancelAnimationFrame)
+                window.cancelAnimationFrame = function(id) {
+                    clearTimeout(id);
+                };
+        }());
+
+
+        /**
+         * super simple carousel
+         * animation between panes happens with css transitions
+         */
+        function Carousel(element)
+        {
+            var self = this;
+            element = $(element);
+
+            var container = $(">.list", element);
+            var panes = $(">.list>.list-block", element);
+
+            var pane_width = 0;
+            var pane_count = panes.length;
+
+            var current_pane = 0;
+
+
+            /**
+             * initial
+             */
+            this.init = function() {
+                setPaneDimensions();
+
+                $(window).on("load resize orientationchange", function() {
+                    setPaneDimensions();
+                    //updateOffset();
+                })
+            };
+
+
+            /**
+             * set the pane dimensions and scale the container
+             */
+            function setPaneDimensions() {
+                pane_width = element.width();
+                panes.each(function() {
+                    $(this).width(pane_width);
+                });
+                container.width(pane_width*pane_count);
+            };
+
+
+            /**
+             * show pane by index
+             * @param   {Number}    index
+             */
+            this.showPane = function( index ) {
+                // between the bounds
+                index = Math.max(0, Math.min(index, pane_count-1));
+                current_pane = index;
+
+                var offset = -((100/pane_count)*current_pane);
+                setContainerOffset(offset, true);
+            };
+
+
+            function setContainerOffset(percent, animate) {
+                container.removeClass("animate");
+
+                if(animate) {
+                    container.addClass("animate");
+                }
+
+                if(Modernizr.csstransforms3d) {
+                    container.css("transform", "translate3d("+ percent +"%,0,0) scale3d(1,1,1)");
+                }
+                else if(Modernizr.csstransforms) {
+                    container.css("transform", "translate("+ percent +"%,0)");
+                }
+                else {
+                    var px = ((pane_width*pane_count) / 100) * percent;
+                    container.css("left", px+"px");
+                }
+            }
+
+            this.next = function() { return this.showPane(current_pane+1, true); };
+            this.prev = function() { return this.showPane(current_pane-1, true); };
+
+
+
+            function handleHammer(ev) {
+                console.log(ev);
+                // disable browser scrolling
+                ev.gesture.preventDefault();
+
+                switch(ev.type) {
+                    case 'dragright':
+                    case 'dragleft':
+                        // stick to the finger
+                        var pane_offset = -(100/pane_count)*current_pane;
+                        var drag_offset = ((100/pane_width)*ev.gesture.deltaX) / pane_count;
+
+                        // slow down at the first and last pane
+                        if((current_pane == 0 && ev.gesture.direction == Hammer.DIRECTION_RIGHT) ||
+                            (current_pane == pane_count-1 && ev.gesture.direction == Hammer.DIRECTION_LEFT)) {
+                            drag_offset *= .4;
+                        }
+
+                        setContainerOffset(drag_offset + pane_offset);
+                        break;
+
+                    case 'swipeleft':
+                        self.next();
+                        ev.gesture.stopDetect();
+                        break;
+
+                    case 'swiperight':
+                        self.prev();
+                        ev.gesture.stopDetect();
+                        break;
+
+                    case 'release':
+                        // more then 50% moved, navigate
+                        if(Math.abs(ev.gesture.deltaX) > pane_width/2) {
+                            if(ev.gesture.direction == 'right') {
+                                self.prev();
+                            } else {
+                                self.next();
+                            }
+                        }
+                        else {
+                            self.showPane(current_pane, true);
+                        }
+                        break;
+                }
+            }
+
+            element.hammer({ drag_lock_to_axis: true })
+            .on("release dragleft dragright swipeleft swiperight", handleHammer);
+        }
+
+
+        var carousel = new Carousel("#carousel");
+        carousel.init();
+
+        </script>
+        <!--[if lt IE 8]>
+          <script src="js/icon-font-ie7.js"></script>
+          <script src="js/icon-font-ie7-24.js"></script>
+        <![endif]-->
+    </body>
+</html>
+
+<!--
+Created: Array[1]
+Description: Array[1]
+Download: Array[1]
+DownloadUrl: Array[1]
+Embed: Array[1]
+Format: Array[1]
+ID: Array[1]
+InContest: Array[1]
+Language: Array[1]
+SlideshowType: Array[1]
+Status: Array[1]
+ThumbnailSmallURL: Array[1]
+ThumbnailURL: Array[1]
+Title: Array[1]
+URL: Array[1]
+Updated: Array[1]
+Username: Array[1]
+-->

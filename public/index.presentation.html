@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Iframe Player API demo</title>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js' ></script> 
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+
+        <!-- Embed code copied from slideshare.net. You need to add an id to the iframe tag so your javascript code can select it and add the query string parameter ?jsapi=true -->
+        <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/14999172?jsapi=true" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+
+        <br/>
+        <p>Test API Calls</p>
+        <div>
+            <button id="first">first</button>
+            <button id="previous">previous</button>
+            <button id="next"/>next</button>
+        <button id="last" >last</button>
+        <button id="getcurrent">getCurrentSlide</button>
+        <input type="text" id="slideNo" value="1"/>
+        <button id="jumpto" >jumpTo</button>
+    </div>
+    <br/>
+    <p>Messages received from embed (Newer at top)
+        <button id="clear">Clear</button></p>
+    <div id="msg" style="height:400px;overflow:auto;padding:5px;border:1px solid #ccc;">
+    </div>
+    <script>
+        // Method to send postmessage calls to iframe
+        function sendAPIMessage(messageName, message){
+            var payload = messageName;
+            if (message){
+                payload = payload + '_' + message;
+            }
+            // pick up the slideshare iframe and send messages to it
+            $('#slideshare_iframe').get(0).contentWindow.postMessage(payload,'*');
+        }
+  
+  
+        // Method to receive postmessage calls from iframe
+        function receiveAPIMessage(e){
+            // get message value out of jQuery event
+            var message = e.originalEvent.data;
+            // break it apart in to messagename and values
+            var messageComponents = message.split('_');
+            var messageName = messageComponents[0];
+            var values = messageComponents.slice(1);
+    
+            // log to message box. Change this part to your desired functionality
+            var stringDebugMessage = "Message <b>" + messageName + "</b> received";
+            if (values.length){
+                stringDebugMessage += " with values " + values.join(', ');
+            }
+    
+            $('#msg').prepend( stringDebugMessage + '<br/>');
+        }
+  
+        $(function(){
+        
+            var iosocket = io.connect();
+
+            iosocket.on('connect', function () {
+                console.log('connected');
+            });
+            iosocket.on('disconnect', function() {
+                // console.log('disconnected');
+            });
+            iosocket.on('key down', function(data) {
+                sendAPIMessage('previous');
+            });
+
+            iosocket.on('key up', function(data) {
+                sendAPIMessage('next');
+            });
+
+            // register handler to receive messages
+            $(window).bind('message', receiveAPIMessage);
+    
+            // Bind handlers to buttons
+            $.each({
+                "first" : function(){
+                    sendAPIMessage('first');
+                },
+                "previous" : function(e){
+                    sendAPIMessage('previous');
+                    iosocket.emit("key down", { keyCode: e.keyCode, shiftKey: e.shiftKey, altKey: e.altKey, ctrlKey: e.ctrlKey, metaKey: e.metaKey });
+    
+                },
+                "next" : function(e){
+                    sendAPIMessage('next');
+                    iosocket.emit("key up", { keyCode: e.keyCode, shiftKey: e.shiftKey, altKey: e.altKey, ctrlKey: e.ctrlKey, metaKey: e.metaKey });
+                },
+                "last" : function(){
+                    sendAPIMessage('last');
+                },
+                "getcurrent" : function(){
+                    sendAPIMessage('getCurrentSlide');
+                },
+                "jumpto" : function(){
+                    var index = $('#slideNo').val();
+                    sendAPIMessage('jumpTo', index);
+                },
+                "clear" : function(){
+                    $('#msg').empty();
+                }
+            }, function(key,handler){
+                $('#' + key).bind('click', handler)
+            })
+    
+  
+  
+
+        });
+    
+    </script>
+</body>
+</html>
+

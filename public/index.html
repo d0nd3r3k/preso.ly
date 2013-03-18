@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script type="text/javascript">
+            var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
+            analytics.load("xydnm0eqvu");
+        </script>
+
         <meta charset="utf-8">
-        <title>Preso.ly - Your Joly Presentation Experience</title>
+        <title>Preso.ly - Presentations Given Differently</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
 
         <!-- Loading Bootstrap -->
@@ -19,23 +24,6 @@
           <script src="js/html5shiv.js"></script>
         <![endif]-->
 
-        <script type="text/javascript">
-            var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
-            analytics.load("xydnm0eqvu");
-        </script>
-        <script type="text/javascript">
-
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-39371865-1']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-
-        </script>
     </head>
     <body>
         <div class="mobile">
@@ -185,11 +173,15 @@
                                                     text: host+qrText 
                                                 });
                                                 this.socket(qrText, type);
+                                                
+
                                             }
                                             else if( type == 'phone'){
                                                 qrText = this.getURLParam('sid');
                                                 if(qrText != "")
                                                     this.socket(qrText, type);
+                                                
+
                                             }
                     
                                         },
@@ -233,6 +225,10 @@
                                             iosocket.on('connect', function () {
                                                 //console.log(sid);
                                                 iosocket.emit("sync", {"type":type,"sid":sid});
+                                                analytics.identify(sid, {
+                                                    type : type
+                                                });
+
                                             });
                                             iosocket.on('disconnect', function() {
                                                 // console.log('disconnected');
@@ -326,6 +322,10 @@
                                                         $(".mini-player").fadeIn(333);
                                                         var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()*50/100+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
                                                         $(".ss-player").append(iframe);
+                                                        analytics.track('Presentation', {
+                                                            pid        : pid,
+                                                            username : username
+                                                        });
                        
                                                     });
                                                 });

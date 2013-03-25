@@ -1004,10 +1004,6 @@ pre code {
   overflow-y: scroll;
 }
 
-form {
-  margin: 0 0 20px;
-}
-
 fieldset {
   padding: 0;
   margin: 0;
@@ -2883,9 +2879,9 @@ table th[class*="span"],
   border: 1px solid rgba(0, 0, 0, 0.2);
   *border-right-width: 2px;
   *border-bottom-width: 2px;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -4298,23 +4294,8 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
-  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
-  background-repeat: repeat-x;
-  border: 1px solid #d4d4d4;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
-  *zoom: 1;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-}
+  }
 
 .navbar-inner:before,
 .navbar-inner:after {
@@ -4524,7 +4505,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav.pull-right {
   float: right;
-  margin-right: 0;
+  margin-top: 3px;
 }
 
 .navbar .nav > li {
@@ -4636,7 +4617,7 @@ input[type="submit"].btn.btn-mini {
   left: 10px;
   display: inline-block;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid #ffffff;
+  border-bottom: 6px solid #eceff1;
   border-left: 6px solid transparent;
   content: '';
 }
@@ -4684,6 +4665,8 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li > .dropdown-menu.pull-right {
   right: 0;
   left: auto;
+  background-color: #eceff1;
+  margin-top: 14px;
 }
 
 .navbar .pull-right > li > .dropdown-menu:before,

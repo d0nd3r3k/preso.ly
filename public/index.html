@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias","ready"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
             analytics.load("xydnm0eqvu");
-        </script>
+        </script>-->
 
         <meta charset="utf-8">
         <title>Preso.ly - Presentations Given Differently</title>
@@ -53,375 +53,403 @@
                 <div class="controllers">
                     <a class="button" id="previous"><span class="arrow">◀</span></a>
                     <a class="button" id="next"><span class="arrow">▶</span></a>
-                    <a class="button" id="first"><span class="arrow">◀◀<span></a>
-                                <a class="button" id="last" ><span class="arrow">▶▶</span></a>
-                                </div>
-                                </div>
+                    <a class="button" id="first"><span class="arrow">◀◀</span></a>
+                    <a class="button" id="last" ><span class="arrow">▶▶</span></a>
+                </div>
+            </div>
 
-                                </div>
-                                <div id="main">
-                                    <div id="player"></div>
+        </div>
 
-                                    <div id="main-app" class="container">
+        <div id="main">
+            <div id="player"></div>
 
-                                        <div class="row">
-                                            <div class="span12">
-                                                <div class="navbar">
-                                                    <div class="navbar-inner">
-                                                        <a href="#" class="logo"><img src="images/logo.png"/></a>
+            <div id="main-app">
 
-                                                        <div class="sub-nav">
-                                                            <div class="span2 sign-in">
-                                                                <a href="#" class="btn btn-large btn-block btn-inverse ">Sign In</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                <div class="row">
+
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <a href="#" class="logo"><img src="images/logo.png"/></a>
+                            <ul class="nav pull-right">
+
+                                <li><a href="#">Sign Up</a></li>
+                                <li class="dropdown"> 
+                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
+                                    <div class="dropdown-menu login-menu">
+                                        <form>
+                                            <div class="login-form">
+                                                <div class="control-group">
+                                                    <input type="text" class="login-field" value="" placeholder="Username" id="login-name">
+                                                    <label class="login-field-icon fui-man-16" for="login-name"></label>
                                                 </div>
+
+                                                <div class="control-group">
+                                                    <input type="password" class="login-field" value="" placeholder="Password" id="login-pass">
+                                                    <label class="login-field-icon fui-lock-16" for="login-pass"></label>
+                                                </div>
+
+                                                <a class="btn btn-primary btn-large btn-block" href="#">Login</a>
+                                                <a class="login-link" href="#">Lost your password?</a>
+
                                             </div>
-
-                                        </div> <!-- /row -->
-                                        <div class="row qr-holder">
-                                            <a href="#"  class="btn btn-large btn-block btn-primary fullscreen" onclick="goFullscreen('main'); return false">Trigger Fullscreen</a>
-                                            <div class="qr-container">
-                                                <div class="share mrl">
-
-                                                    <div id="qr-code" class="qr"></div>
-                                                    <a href="#" class="btn btn-large btn-block disabled">Scan QR to begin</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div> <!-- /container -->
-                                </div>
-                                <footer>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="span7">
-                                                <h3 class="footer-title">Early Adopter</h3>
-                                                <p>Would you like to be the first to use preso.ly ?<br/>
-                                                    Subscribe to stay tuned.<br/>
-                                                </p>
-                                                <form action="http://meeneeme.us6.list-manage.com/subscribe/post" method="POST">
-                                                    <input type="hidden" name="u" value="f601f8de40">
-                                                    <input type="hidden" name="id" value="08687d3a1f">
-
-                                                    <div class="span3 subscribe-ipt">
-                                                        <input type="email" name="MERGE0" id="MERGE0"  value="" placeholder="donald@preso.ly" class="span3">
-
-                                                    </div>
-                                                    <div class="span3 subscribe-btn">
-
-                                                        <input type="submit" value="Subscribe" class="btn btn-block btn-primary" />
-                                                    </div>
-                                                </form>
-                                                <div class="span6 links subscribe-ipt">
-                                                    <span>&COPY; 2013 Preso.ly </span>
-                                                    <a href="http://www.preso.ly/help" /> Learn More</a>
-                                                    <a href="mailto:info@preso.ly" />Contact Us</a>
-                                                </div>
-
-
-                                            </div> <!-- /span8 -->
-
-                                            <div class="span5">
-                                                <div class="footer-banner">
-                                                    <h3 class="footer-title">Mentions</h3>
-                                                    <ul>
-                                                        <li><a href="http://arabnet.me/startup-demo-ideathon-finalists-arabnet-beirut-2013/" target="_BLANK">Arabnet - Startup Demo 2013 Finalist</a></li>
-                                                        <li><a href="http://blog.berytech.org/2012/07/23/startup-weekend-beirut-2012-recap/" target="_BLANK">Berytech - Sartup Weekend 2012</a></li>
-                                                        <li><a href="http://blogs.wsj.com/tech-europe/2012/07/10/middle-east-start-ups-thrive-in-beirut/" target="_BLANK">Wall Street Journal - ME Startups</a></li>
-                                                        <li><a href="http://arabnet.me/winners-startup-weekend-beirut/" target="_BLANK">Arabnet - Startup Weekend Beirut 2012</a></li>
-                                                        <li><a href="http://www.wamda.com/2012/07/what-stood-out-at-startup-weekend-beirut" target="_BLANK">Wamda - Sartup Weekend Beirut 2012</a></li>
-
-                                                    </ul>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
-                                </footer>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
 
 
-                                <!-- Load JS here for greater good =============================-->
-                                <script src="js/jquery-1.8.2.min.js"></script>
-                                <script src="/socket.io/socket.io.js"></script>
-                                <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
-                                <script src="js/jquery.dropkick-1.0.0.js"></script>
-                                <script src="js/custom_checkbox_and_radio.js"></script>
-                                <script src="js/custom_radio.js"></script>
-                                <script src="js/jquery.tagsinput.js"></script>
-                                <script src="js/bootstrap-tooltip.js"></script>
-                                <script src="js/jquery.placeholder.js"></script>
-                                <script src="js/xml2json.js"></script>
-                                <script src="js/jquery.qrcode-0.2.min.js"></script>
-                                <script src="http://vjs.zencdn.net/c/video.js"></script>
-                                <script src="js/application.js"></script>
-                                <script type="text/javascript">
+                </div> <!-- /row -->
+                <div class="row qr-holder">
+                    <a href="#"  class="btn btn-large btn-block btn-primary fullscreen" onclick="goFullscreen('main'); return false">Trigger Fullscreen</a>
+                    <div class="qr-container">
+                        <div class="share mrl">
+
+                            <div id="qr-code" class="qr"></div>
+                            <a href="#" class="btn btn-large btn-block disabled">Scan QR to begin</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /container -->
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span7">
+                        <h3 class="footer-title">Early Adopter</h3>
+                        <p>Would you like to be the first to use preso.ly ?<br/>
+                            Subscribe to stay tuned.<br/>
+                        </p>
+                        <form action="http://meeneeme.us6.list-manage.com/subscribe/post" method="POST">
+                            <input type="hidden" name="u" value="f601f8de40">
+                            <input type="hidden" name="id" value="08687d3a1f">
+
+                            <div class="span3 subscribe-ipt">
+                                <input type="email" name="MERGE0" id="MERGE0"  value="" placeholder="donald@preso.ly" class="span4">
+
+                            </div>
+                            <div class="span2 subscribe-btn">
+
+                                <input type="submit" value="Subscribe" class="btn btn-block btn-primary" />
+                            </div>
+                        </form>
+                        <p>
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="I'm using @presoly to present differently! " data-url="http://preso.ly" data-lang="en">Tweet</a>
+                        </p>
+                        <div class="span6 links subscribe-ipt">
+                            <span>&COPY; 2013 Preso.ly </span>
+                            <a href="http://www.preso.ly/help" /> Learn More</a>
+                            <a href="mailto:donald@preso.ly" />Contact Us</a>
+                        </div>
+
+
+                    </div> <!-- /span8 -->
+
+                    <div class="span5">
+                        <div class="footer-banner">
+                            <h3 class="footer-title">Mentions</h3>
+                            <ul>
+                                <li><a href="http://arabnet.me/startup-demo-ideathon-finalists-arabnet-beirut-2013/" target="_BLANK">Arabnet - Startup Demo 2013 Finalist</a></li>
+                                <li><a href="http://blog.berytech.org/2012/07/23/startup-weekend-beirut-2012-recap/" target="_BLANK">Berytech - Sartup Weekend 2012</a></li>
+                                <li><a href="http://blogs.wsj.com/tech-europe/2012/07/10/middle-east-start-ups-thrive-in-beirut/" target="_BLANK">Wall Street Journal - ME Startups</a></li>
+                                <li><a href="http://arabnet.me/winners-startup-weekend-beirut/" target="_BLANK">Arabnet - Startup Weekend Beirut 2012</a></li>
+                                <li><a href="http://www.wamda.com/2012/07/what-stood-out-at-startup-weekend-beirut" target="_BLANK">Wamda - Sartup Weekend Beirut 2012</a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        <!-- Load JS here for greater good =============================-->
+        <script src="js/jquery-1.8.2.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src="js/jquery.dropkick-1.0.0.js"></script>
+        <script src="js/custom_checkbox_and_radio.js"></script>
+        <script src="js/custom_radio.js"></script>
+        <script src="js/jquery.tagsinput.js"></script>
+        <script src="js/bootstrap-tooltip.js"></script>
+        <script src="js/jquery.placeholder.js"></script>
+        <script src="js/xml2json.js"></script>
+        <script src="js/jquery.qrcode-0.2.min.js"></script>
+        <script src="http://vjs.zencdn.net/c/video.js"></script>
+        <script src="js/application.js"></script>
+        <script type="text/javascript">
             
-                                    var app = {
-                                        init: function(){
-                                            var type = this.getType();
-                                            var host = window.location+'?sid=';
-                                            if (type == 'screen'){
-                                                var qrText = this.generateSerial(8);
+            var app = {
+                init: function(){
+                    var type = this.getType();
+                    var host = window.location+'?sid=';
+                    if (type == 'screen'){
+                        var qrText = this.generateSerial(8);
                 
-                                                $('#qr-code').qrcode({
-                                                    render: 'div',
-                                                    width: 300,
-                                                    height: 300,
-                                                    color: '#34495E',
-                                                    text: host+qrText 
-                                                });
-                                                this.socket(qrText, type);
+                        $('#qr-code').qrcode({
+                            render: 'div',
+                            width: 300,
+                            height: 300,
+                            color: '#34495E',
+                            text: host+qrText 
+                        });
+                        this.socket(qrText, type);
                                                 
 
-                                            }
-                                            else if( type == 'phone'){
-                                                qrText = this.getURLParam('sid');
-                                                if(qrText != "")
-                                                    this.socket(qrText, type);
+                    }
+                    else if( type == 'phone'){
+                        qrText = this.getURLParam('sid');
+                        if(qrText != "")
+                            this.socket(qrText, type);
                                                 
 
-                                            }
+                    }
                     
-                                        },
-                                        getURLParam: function (name) {
-                                            return decodeURI(
-                                            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
-                                        );
-                                        },
-                                        getType: function(){
-                                            var width = $(window).width();
-                                            if(width == '320' || width <= '586'){
-                                                return 'phone';
-                                            }
-                                            else{
-                                                return 'screen';
-                                            }
-                                        },
-                                        generateSerial: function(len){
-                                            var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-                                            var string_length = len;
-                                            var randomstring = '';
+                },
+                getURLParam: function (name) {
+                    return decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+                );
+                },
+                getType: function(){
+                    var width = $(window).width();
+                    if(width == '320' || width <= '586'){
+                        return 'phone';
+                    }
+                    else{
+                        return 'screen';
+                    }
+                },
+                generateSerial: function(len){
+                    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+                    var string_length = len;
+                    var randomstring = '';
 
-                                            for (var x=0;x<string_length;x++) {
+                    for (var x=0;x<string_length;x++) {
 
-                                                var letterOrNumber = Math.floor(Math.random() * 2);
-                                                if (letterOrNumber == 0) {
-                                                    var newNum = Math.floor(Math.random() * 9);
-                                                    randomstring += newNum;
-                                                } else {
-                                                    var rnum = Math.floor(Math.random() * chars.length);
-                                                    randomstring += chars.substring(rnum,rnum+1);
-                                                }
+                        var letterOrNumber = Math.floor(Math.random() * 2);
+                        if (letterOrNumber == 0) {
+                            var newNum = Math.floor(Math.random() * 9);
+                            randomstring += newNum;
+                        } else {
+                            var rnum = Math.floor(Math.random() * chars.length);
+                            randomstring += chars.substring(rnum,rnum+1);
+                        }
 
-                                            }
-                                            return randomstring;
-                                        },
-                                        socket: function(sid, type){
+                    }
+                    return randomstring;
+                },
+                socket: function(sid, type){
                    
-                                            var iosocket = io.connect();
+                    var iosocket = io.connect();
 
-                                            iosocket.on('connect', function () {
-                                                //console.log(sid);
-                                                iosocket.emit("sync", {"type":type,"sid":sid});
-                                                analytics.identify(sid, {
-                                                    type : type
-                                                });
+                    iosocket.on('connect', function () {
+                        //console.log(sid);
+                        iosocket.emit("sync", {"type":type,"sid":sid});
+                        analytics.identify(sid, {
+                            type : type
+                        });
 
-                                            });
-                                            iosocket.on('disconnect', function() {
-                                                // console.log('disconnected');
-                                            });
-                                            iosocket.on('starting-show', function(data){
-                                                console.log(data.sid);
-                                                $("#main-app").hide();
-                                                var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+data.pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
-                                                $("#player").append(iframe);
+                    });
+                    iosocket.on('disconnect', function() {
+                        // console.log('disconnected');
+                    });
+                    iosocket.on('starting-show', function(data){
+                        console.log(data.sid);
+                        $("#main-app").hide();
+                        var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+data.pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
+                        $("#player").append(iframe);
                        
-                                            });
+                    });
                     
                      
-                                            iosocket.on('first', function(data) {
-                                                sendAPIMessage('first');
-                                                console.log("first slide");
-                                            });
+                    iosocket.on('first', function(data) {
+                        sendAPIMessage('first');
+                        console.log("first slide");
+                    });
 
-                                            iosocket.on('previous', function(data) {
-                                                sendAPIMessage('previous');
-                                                console.log("previous slide");
-                                            });
+                    iosocket.on('previous', function(data) {
+                        sendAPIMessage('previous');
+                        console.log("previous slide");
+                    });
                                 
-                                            iosocket.on('next', function(data) {
-                                                sendAPIMessage('next');
-                                                console.log("next slide");
-                                            });
+                    iosocket.on('next', function(data) {
+                        sendAPIMessage('next');
+                        console.log("next slide");
+                    });
                                 
-                                            iosocket.on('last', function(data) {
-                                                sendAPIMessage('last');
-                                            });
+                    iosocket.on('last', function(data) {
+                        sendAPIMessage('last');
+                    });
                                 
                                 
-                                            // register handler to receive messages
-                                            $(window).bind('message', receiveAPIMessage);
+                    // register handler to receive messages
+                    $(window).bind('message', receiveAPIMessage);
     
-                                            // Bind handlers to buttons
-                                            $.each({
-                                                "first" : function(){
-                                                    sendAPIMessage('first');
-                                                    iosocket.emit("first", {"sid":sid});
-                                                },
-                                                "previous" : function(e){
-                                                    sendAPIMessage('previous');
-                                                    iosocket.emit("previous", {"sid":sid});
+                    // Bind handlers to buttons
+                    $.each({
+                        "first" : function(){
+                            sendAPIMessage('first');
+                            iosocket.emit("first", {"sid":sid});
+                        },
+                        "previous" : function(e){
+                            sendAPIMessage('previous');
+                            iosocket.emit("previous", {"sid":sid});
     
-                                                },
-                                                "next" : function(e){
-                                                    sendAPIMessage('next');
-                                                    iosocket.emit("next", {"sid":sid});
-                                                },
-                                                "last" : function(){
-                                                    sendAPIMessage('last');
-                                                    iosocket.emit("last", {"sid":sid});
-                                                }
-                                            }, function(key,handler){
-                                                $('#' + key).bind('click', handler)
-                                            });
+                        },
+                        "next" : function(e){
+                            sendAPIMessage('next');
+                            iosocket.emit("next", {"sid":sid});
+                        },
+                        "last" : function(){
+                            sendAPIMessage('last');
+                            iosocket.emit("last", {"sid":sid});
+                        }
+                    }, function(key,handler){
+                        $('#' + key).bind('click', handler)
+                    });
                     
-                                            $('#log-in').click(function(e){
-                                                e.preventDefault();
-                                                var btn = $(this);
-                                                var username = $("#login-name").val();
-                                                iosocket.emit("login", {"username":username});
-                                                $(this).addClass('disabled');
-                                                $(this).text("loading...");
-                                                iosocket.on('presentations', function(data){
-                                                    $(btn).text("success...");
-                                                    $(".login-form").delay(200).fadeOut(200);
-                                                    console.log(data);
-                                                    var presentations = data.User.Slideshow;
-                                                    //console.log(presentations);
-                                                    $.each(presentations, function(i, item) {
-                                                        var block = '<div class="span4 block">';
-                                                        block += '<div class="tile">';
-                                                        block += '<img class="tile-image big-illustration" alt="" src="'+presentations[i].ThumbnailSmallURL+'">'
-                                                        block += '<h3 class="tile-title">'+presentations[i].Title+'</h3>';
-                                                        block += '<p>'+ presentations[i].Description +'</p>';
-                                                        block += '<a class="btn btn-primary btn-large btn-block present" data-id="'+presentations[i].ID+'">Present</a>';
-                                                        block += '</div></div>';
-                                                        $('.list-pres').append(block);
-                                                    });
+                    $('#log-in').click(function(e){
+                        e.preventDefault();
+                        var btn = $(this);
+                        var username = $("#login-name").val();
+                        iosocket.emit("login", {"username":username});
+                        $(this).addClass('disabled');
+                        $(this).text("loading...");
+                        iosocket.on('presentations', function(data){
+                            $(btn).text("success...");
+                            $(".login-form").delay(200).fadeOut(200);
+                            console.log(data);
+                            var presentations = data.User.Slideshow;
+                            //console.log(presentations);
+                            $.each(presentations, function(i, item) {
+                                var block = '<div class="span4 block">';
+                                block += '<div class="tile">';
+                                block += '<img class="tile-image big-illustration" alt="" src="'+presentations[i].ThumbnailSmallURL+'">'
+                                block += '<h3 class="tile-title">'+presentations[i].Title+'</h3>';
+                                block += '<p>'+ presentations[i].Description +'</p>';
+                                block += '<a class="btn btn-primary btn-large btn-block present" data-id="'+presentations[i].ID+'">Present</a>';
+                                block += '</div></div>';
+                                $('.list-pres').append(block);
+                            });
                             
-                                                    $(".list-pres").delay(500).fadeIn();
+                            $(".list-pres").delay(500).fadeIn();
                             
-                                                    $('.present').click(function(e){
-                                                        e.preventDefault();
-                                                        var pid = $(this).data('id');
-                                                        iosocket.emit("present", {"sid":sid,"pid": pid});
-                                                        $(".list-pres").hide();
-                                                        $(".mini-player").fadeIn(333);
-                                                        var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()*50/100+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
-                                                        $(".ss-player").append(iframe);
-                                                        analytics.track('Presentation', {
-                                                            pid        : pid,
-                                                            username : username
-                                                        });
-                       
-                                                    });
-                                                });
-                                            });
-                                        }
-                                    }
-                                    function goFullscreen(id){
-                                        var element = document.getElementById(id);
-    
-    
-                                        if (element.mozRequestFullScreen) {
-                                            element.mozRequestFullScreen();
-                                        } else if (element.webkitRequestFullScreen) {
-                                            element.webkitRequestFullScreen();
-                                        }
-                                    }
-                                    // Method to send postmessage calls to iframe
-                                    function sendAPIMessage(messageName, message){
-                                        var payload = messageName;
-                                        if (message){
-                                            payload = payload + '_' + message;
-                                        }
-                                        // pick up the slideshare iframe and send messages to it
-                                        $('#slideshare_iframe').get(0).contentWindow.postMessage(payload,'*');
-                
-                                    }
-  
-  
-                                    // Method to receive postmessage calls from iframe
-                                    function receiveAPIMessage(e){
-                                        // get message value out of jQuery event
-                                        var message = e.originalEvent.data;
-                                        // break it apart in to messagename and values
-                                        var messageComponents = message.split('_');
-                                        var messageName = messageComponents[0];
-                                        var values = messageComponents.slice(1);
-    
-                                        // log to message box. Change this part to your desired functionality
-                                        var stringDebugMessage = "Message <b>" + messageName + "</b> received";
-                                        if (values.length){
-                                            stringDebugMessage += " with values " + values.join(', ');
-                                        }
-    
-                                        $('#msg').prepend( stringDebugMessage + '<br/>');
-                                    }
-                                    function parseXml(xml) {
-                                        var dom = null;
-                                        if (window.DOMParser) {
-                                            try { 
-                                                dom = (new DOMParser()).parseFromString(xml, "text/xml"); 
-                                            } 
-                                            catch (e) { dom = null; }
-                                        }
-                                        else if (window.ActiveXObject) {
-                                            try {
-                                                dom = new ActiveXObject('Microsoft.XMLDOM');
-                                                dom.async = false;
-                                                if (!dom.loadXML(xml)) // parse error ..
-
-                                                window.alert(dom.parseError.reason + dom.parseError.srcText);
-                                        } 
-                                        catch (e) { dom = null; }
-                                    }
-                                    else
-                                        alert("cannot parse xml string!");
-                                    return dom;
-                                }
-                
-                                jQuery(function($){
-                                    app.init();    
-                
+                            $('.present').click(function(e){
+                                e.preventDefault();
+                                var pid = $(this).data('id');
+                                iosocket.emit("present", {"sid":sid,"pid": pid});
+                                $(".list-pres").hide();
+                                $(".mini-player").fadeIn(333);
+                                var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()*50/100+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
+                                $(".ss-player").append(iframe);
+                                analytics.track('Presentation', {
+                                    pid        : pid,
+                                    username : username
                                 });
-                                </script>
-                                <!--[if lt IE 8]>
-                                  <script src="js/icon-font-ie7.js"></script>
-                                  <script src="js/icon-font-ie7-24.js"></script>
-                                <![endif]-->
-                                </body>
-                                </html>
+                       
+                            });
+                        });
+                    });
+                }
+            }
+            function goFullscreen(id){
+                var element = document.getElementById(id);
+    
+    
+                if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullScreen) {
+                    element.webkitRequestFullScreen();
+                }
+            }
+            // Method to send postmessage calls to iframe
+            function sendAPIMessage(messageName, message){
+                var payload = messageName;
+                if (message){
+                    payload = payload + '_' + message;
+                }
+                // pick up the slideshare iframe and send messages to it
+                $('#slideshare_iframe').get(0).contentWindow.postMessage(payload,'*');
+                
+            }
+  
+  
+            // Method to receive postmessage calls from iframe
+            function receiveAPIMessage(e){
+                // get message value out of jQuery event
+                var message = e.originalEvent.data;
+                // break it apart in to messagename and values
+                var messageComponents = message.split('_');
+                var messageName = messageComponents[0];
+                var values = messageComponents.slice(1);
+    
+                // log to message box. Change this part to your desired functionality
+                var stringDebugMessage = "Message <b>" + messageName + "</b> received";
+                if (values.length){
+                    stringDebugMessage += " with values " + values.join(', ');
+                }
+    
+                $('#msg').prepend( stringDebugMessage + '<br/>');
+            }
+            function parseXml(xml) {
+                var dom = null;
+                if (window.DOMParser) {
+                    try { 
+                        dom = (new DOMParser()).parseFromString(xml, "text/xml"); 
+                    } 
+                    catch (e) { dom = null; }
+                }
+                else if (window.ActiveXObject) {
+                    try {
+                        dom = new ActiveXObject('Microsoft.XMLDOM');
+                        dom.async = false;
+                        if (!dom.loadXML(xml)) // parse error ..
 
-                                <!--
-                                Created: Array[1]
-                                Description: Array[1]
-                                Download: Array[1]
-                                DownloadUrl: Array[1]
-                                Embed: Array[1]
-                                Format: Array[1]
-                                ID: Array[1]
-                                InContest: Array[1]
-                                Language: Array[1]
-                                SlideshowType: Array[1]
-                                Status: Array[1]
-                                ThumbnailSmallURL: Array[1]
-                                ThumbnailURL: Array[1]
-                                Title: Array[1]
-                                URL: Array[1]
-                                Updated: Array[1]
-                                Username: Array[1]
-                                -->
+                        window.alert(dom.parseError.reason + dom.parseError.srcText);
+                } 
+                catch (e) { dom = null; }
+            }
+            else
+                alert("cannot parse xml string!");
+            return dom;
+        }
+                
+        jQuery(function($){
+            app.init();    
+                
+        });
+        </script>
+        <!--[if lt IE 8]>
+          <script src="js/icon-font-ie7.js"></script>
+          <script src="js/icon-font-ie7-24.js"></script>
+        <![endif]-->
+    </body>
+</html>
+
+<!--
+Created: Array[1]
+Description: Array[1]
+Download: Array[1]
+DownloadUrl: Array[1]
+Embed: Array[1]
+Format: Array[1]
+ID: Array[1]
+InContest: Array[1]
+Language: Array[1]
+SlideshowType: Array[1]
+Status: Array[1]
+ThumbnailSmallURL: Array[1]
+ThumbnailURL: Array[1]
+Title: Array[1]
+URL: Array[1]
+Updated: Array[1]
+Username: Array[1]
+-->

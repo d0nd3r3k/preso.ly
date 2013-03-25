@@ -1,8 +1,9 @@
 var url = require('url');
 var express = require('express');
 var app = express()
-  , server = require('http').createServer(app)
-  , io = require('socket.io').listen(server);
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+
 
 //Configure Server.
 app.configure(function(){
@@ -15,7 +16,7 @@ app.configure(function(){
         showStack: true
     })); //Show errors in development
 });
-server.listen(8080);
+server.listen(8888);
 
 var SlideShare = require('slideshare');
 var parseString = require('xml2js').parseString;
@@ -26,9 +27,6 @@ var phones = {};
 
 io.sockets.on('connection', function(socket){
     
-    socket.on('message', function(message){
-        socket.broadcast.emit('message', message);
-    });
     socket.on('sync',function(data){
         if(data.type == "screen"){
             screens[data.sid] = socket;
@@ -38,16 +36,17 @@ io.sockets.on('connection', function(socket){
         }
         
     });
+    
     socket.on('login', function(data){
         var username = data.username; 
         ss.getSlideshowsByUser(username, {
             limit: 5, 
             detailed: 0
         }, function(result) { 
-            
             socket.emit("presentations",result);
         });
     });
+    
     socket.on('present', function(data){
         //console.log(data.pid);
         var ss = screens[data.sid];
@@ -57,6 +56,7 @@ io.sockets.on('connection', function(socket){
             });
         
     });
+    
     socket.on('first', function(data){
         var ss = screens[data.sid];
         ss.emit("first",data);

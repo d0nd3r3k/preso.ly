@@ -7,7 +7,7 @@ var httpProxy = require('http-proxy');
 //
 // Create your proxy server
 //
-httpProxy.createServer(8080, 'localhost').listen(80);
+httpProxy.createServer(8080, 'preso.ly').listen(80);
 
 //Configure Server.
 app.configure(function(){

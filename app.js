@@ -2,7 +2,6 @@ var url = require('url');
 var express = require('express');
 var app = express()
 var server = require('http').createServer(app);
-var io = require('socket.io').listen(server);
 
 //Configure Server.
 app.configure(function(){
@@ -20,6 +19,7 @@ server.listen(8080);
 var SlideShare = require('slideshare');
 var parseString = require('xml2js').parseString;
 var ss = new SlideShare('JIp6G0cG', 'uGbHeRHP');
+var io = require('socket.io').listen(server);
 
 var screens = {};
 var phones = {};

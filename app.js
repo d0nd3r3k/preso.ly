@@ -16,7 +16,7 @@ app.configure(function(){
         showStack: true
     })); //Show errors in development
 });
-server.listen(8888);
+server.listen(80);
 
 var SlideShare = require('slideshare');
 var parseString = require('xml2js').parseString;

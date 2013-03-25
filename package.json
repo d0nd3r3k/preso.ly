@@ -8,6 +8,7 @@
         "slideshare": "~0.1.1",
         "socket.io": "~0.9.13",
         "xml2js": "~0.2.6",
-	"forever":"~0.10.0"
+	"forever":"~0.10.0",
+	"http-proxy":"~0.10.0"
     }
 }

@@ -3,7 +3,11 @@ var express = require('express');
 var app = express()
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-
+var httpProxy = require('http-proxy');
+//
+// Create your proxy server
+//
+httpProxy.createServer(8080, 'localhost').listen(80);
 
 //Configure Server.
 app.configure(function(){
@@ -16,7 +20,7 @@ app.configure(function(){
         showStack: true
     })); //Show errors in development
 });
-server.listen(80);
+server.listen(8080);
 
 var SlideShare = require('slideshare');
 var parseString = require('xml2js').parseString;

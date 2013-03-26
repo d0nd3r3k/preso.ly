@@ -250,7 +250,7 @@
                     var iosocket = io.connect('http://preso.ly');
 
                     iosocket.on('connect', function () {
-                        //console.log(sid);
+                        console.log(sid);
                         iosocket.emit("sync", {"type":type,"sid":sid});
                         
 

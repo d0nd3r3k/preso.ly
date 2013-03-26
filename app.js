@@ -7,7 +7,6 @@ var httpProxy = require('http-proxy');
 
 //Configure Server.
 app.configure(function(){
-    app.use(app.router);
     app.use(express.static(__dirname+'/public'));
 });
 
@@ -18,14 +17,11 @@ var SlideShare = require('slideshare');
 var parseString = require('xml2js').parseString;
 var ss = new SlideShare('JIp6G0cG', 'uGbHeRHP');
 
-
 var screens = {};
 var phones = {};
+
 io.sockets.on('connection', function(socket){
     
-    socket.on('message', function(message){
-        socket.broadcast.emit('message', message);
-    });
     socket.on('sync',function(data){
         if(data.type == "screen"){
             screens[data.sid] = socket;
@@ -35,6 +31,7 @@ io.sockets.on('connection', function(socket){
         }
         
     });
+    
     socket.on('login', function(data){
         var username = data.username; 
         ss.getSlideshowsByUser(username, {
@@ -45,6 +42,7 @@ io.sockets.on('connection', function(socket){
             socket.emit("presentations",result);
         });
     });
+    
     socket.on('present', function(data){
         //console.log(data.pid);
         var ss = screens[data.sid];

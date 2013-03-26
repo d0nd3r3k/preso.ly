@@ -20,7 +20,9 @@ var ss = new SlideShare('JIp6G0cG', 'uGbHeRHP');
 var screens = {};
 var phones = {};
 
-io.sockets.on('connection', function(socket){
+io.set('authorization', function (data, accept) {
+   return accept(null, true);  
+}).sockets.on('connection', function(socket){
     
     socket.on('sync',function(data){
         if(data.type == "screen"){
@@ -75,5 +77,5 @@ io.sockets.on('connection', function(socket){
 
 });
 
-var proxy = httpProxy.createServer(8080, 'preso.ly');
+var proxy = httpProxy.createServer(8080, 'preso.y');
 proxy.listen(80);

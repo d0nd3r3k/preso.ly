@@ -37,8 +37,9 @@ body{
     min-height: 300px;
 }
 .qr-holder{
-    margin: 10px auto;
     width: 400px;
+    float: left;
+    margin-left: 4px;
 }
 .fullscreen{
     width: 380px;
@@ -204,4 +205,39 @@ footer{
 }
 footer form {
     min-height: 60px;
+}
+.text-container{
+    float:left;
+
+}
+.text-container h1{
+    font-size: 30px;
+}
+.text-container .sub-text{
+    padding-right: 6px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: none
+}
+.text-container ol li{
+    font-weight: 500;
+    text-transform: none;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+.text-area a{
+    color:#2C3E50;
+}
+.text-area a:hover {
+    color: #2ecc71;
+    text-decoration: none; }
+.text-container ol{
+    margin-left: 40px;
+}
+.text-area{
+    padding: 6px 20px;
+    background: #eceff1;
+    border-radius: 6px
 }

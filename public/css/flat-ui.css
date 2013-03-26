@@ -1541,11 +1541,11 @@ textarea,
     border-color: transparent transparent #ecf0f5 transparent;
     height: 0px;
     position: absolute;
-    left: 183px;
-    top: -9px;
+    right: -10px;
+    top: 34px;
     width: 0px;
-    -webkit-transform: rotate(360deg); }
-.share ul {
+    -webkit-transform: rotate(90deg);
+}.share ul {
     list-style-type: none;
     margin: 0;
     padding: 15px; }

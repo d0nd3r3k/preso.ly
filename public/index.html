@@ -103,18 +103,30 @@
 
 
                 </div> <!-- /row -->
-                <div class="row qr-holder">
-                    <a href="#"  class="btn btn-large btn-block btn-primary fullscreen" onclick="goFullscreen('main'); return false">Trigger Fullscreen</a>
-                    <div class="qr-container">
-                        <div class="share mrl">
+                <div class="container">
+                    <div class="row qr-holder">
+                        <!--<a href="#"  class="btn btn-large btn-block btn-primary fullscreen" onclick="goFullscreen('main'); return false">Trigger Fullscreen</a>-->
+                        <div class="qr-container">
+                            <div class="share mrl">
 
-                            <div id="qr-code" class="qr"></div>
-                            <a href="#" class="btn btn-large btn-block disabled">Scan QR to begin</a>
+                                <div id="qr-code" class="qr"></div>
+                                <a href="#" class="btn btn-large btn-block disabled">- - - - - - - - - - - - - - - -</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-container">
+                        <div class="span6 text-area">
+                            <h1>Hello, World.</h1>
+                            <ol>
+                                <li>Scan QR Code with your smartphone<p class="sub-text">we recommend <a href="http://scan.me/apps/" target="_BLANK">Scan</a> app for both iOS and android</p></li>
+                                <li>Login with any <a href="http://slideshare.net" target="_BLANK">SlideShare</a> account</li>
+                                <li>Select a presentation, then control it via your mobile device!</li>
+                            </ol>
+                            
                         </div>
                     </div>
                 </div>
-
-            </div> <!-- /container -->
+            </div> <!-- /main-app-->
         </div>
 
         <footer>
@@ -122,7 +134,7 @@
                 <div class="row">
                     <div class="span7">
                         <h3 class="footer-title">Early Adopter</h3>
-                        <p>Would you like to be the first to use preso.ly ?<br/>
+                        <p>Would you like to be the first to use our native mobile app?<br/>
                             Subscribe to stay tuned.<br/>
                         </p>
                         <form action="http://meeneeme.us6.list-manage.com/subscribe/post" method="POST">
@@ -344,6 +356,7 @@
                                 var pid = $(this).data('id');
                                 iosocket.emit("present", {"sid":sid,"pid": pid});
                                 $(".list-pres").hide();
+                                $('.header').hide();
                                 $(".mini-player").fadeIn(333);
                                 var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()*50/100+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
                                 $(".ss-player").append(iframe);

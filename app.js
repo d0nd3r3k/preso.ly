@@ -10,7 +10,7 @@ app.configure(function(){
     app.use(express.static(__dirname+'/public'));
 });
 
-server.listen(8080);
+server.listen(80);
 
 
 var SlideShare = require('slideshare');

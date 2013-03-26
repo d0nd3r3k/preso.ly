@@ -21,6 +21,10 @@ var screens = {};
 var phones = {};
 io.set('transports', [
     'websocket'
+  , 'flashsocket'
+  , 'htmlfile'
+  , 'xhr-polling'
+  , 'jsonp-polling'
 ]);
 io.set('authorization', function (data, accept) {
    return accept(null, true);  

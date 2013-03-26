@@ -2,30 +2,25 @@ var url = require('url');
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
+var io = io = require('socket.io').listen(server);
+var httpProxy = require('http-proxy');
 
 //Configure Server.
 app.configure(function(){
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
     app.use(app.router);
     app.use(express.static(__dirname+'/public'));
-    app.use(express.errorHandler({
-        dumpExceptions: true, 
-        showStack: true
-    })); //Show errors in development
 });
-server.listen(80);
 
+server.listen(8080);
 
-var io = require('socket.io').listen(server);
 
 var SlideShare = require('slideshare');
 var parseString = require('xml2js').parseString;
 var ss = new SlideShare('JIp6G0cG', 'uGbHeRHP');
 
+
 var screens = {};
 var phones = {};
-
 io.sockets.on('connection', function(socket){
     
     socket.on('message', function(message){
@@ -81,3 +76,6 @@ io.sockets.on('connection', function(socket){
     });
 
 });
+
+var proxy = httpProxy.createServer(8080, 'preso.ly');
+proxy.listen(80);

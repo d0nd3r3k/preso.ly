@@ -247,7 +247,7 @@
                 },
                 socket: function(sid, type){
                    
-                    var iosocket = io.connect();
+                    var iosocket = io.connect('http://preso.ly');
 
                     iosocket.on('connect', function () {
                         //console.log(sid);

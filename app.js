@@ -1,8 +1,7 @@
 var url = require('url');
 var express = require('express');
-var app = express()
-  , server = require('http').createServer(app)
-  , io = require('socket.io').listen(server);
+var app = express();
+var server = require('http').createServer(app);
 
 //Configure Server.
 app.configure(function(){
@@ -16,6 +15,9 @@ app.configure(function(){
     })); //Show errors in development
 });
 server.listen(80);
+
+
+var io = require('socket.io').listen(server);
 
 var SlideShare = require('slideshare');
 var parseString = require('xml2js').parseString;

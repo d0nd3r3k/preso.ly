@@ -9,7 +9,9 @@ var httpProxy = require('http-proxy');
 app.configure(function(){
     app.use(express.static(__dirname+'/public'));
 });
-
+server.on('listening',function(){
+    console.log('ok, server is running');
+});
 server.listen(80);
 
 

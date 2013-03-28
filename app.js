@@ -21,13 +21,13 @@ var screens = {};
 var phones = {};
 io.set('transports', [
     'websocket'
-  , 'flashsocket'
-  , 'htmlfile'
-  , 'xhr-polling'
-  , 'jsonp-polling'
-]);
+    , 'flashsocket'
+    , 'htmlfile'
+    , 'xhr-polling'
+    , 'jsonp-polling'
+    ]);
 io.set('authorization', function (data, accept) {
-   return accept(null, true);  
+    return accept(null, true);  
 }).sockets.on('connection', function(socket){
     
     socket.on('sync',function(data){
@@ -36,6 +36,8 @@ io.set('authorization', function (data, accept) {
         }
         else if (data.type == "phone"){
             phones[data.sid] = socket;
+            var ss = screens[data.sid];
+            ss.emit("step1",data);
         }
         
     });
@@ -46,7 +48,8 @@ io.set('authorization', function (data, accept) {
             limit: 5, 
             detailed: 0
         }, function(result) { 
-            
+            var ss = screens[data.sid];
+            ss.emit("step2",data);
             socket.emit("presentations",result);
         });
     });
@@ -55,9 +58,10 @@ io.set('authorization', function (data, accept) {
         //console.log(data.pid);
         var ss = screens[data.sid];
         //console.log(screens[data.sid]);
+        ss.emit("step2",data);
         ss.emit("starting-show",{
             "pid":data.pid
-            });
+        });
         
     });
     socket.on('first', function(data){

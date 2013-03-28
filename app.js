@@ -12,7 +12,7 @@ app.configure(function(){
 server.on('listening',function(){
     console.log('ok, server is running');
 });
-server.listen(80);
+server.listen(8080);
 
 
 var SlideShare = require('slideshare');

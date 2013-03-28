@@ -242,3 +242,7 @@ footer form {
     background: #eceff1;
     border-radius: 6px
 }
+.fui-checkmark-24{
+    color:#1abc9c;
+    display: none;
+}

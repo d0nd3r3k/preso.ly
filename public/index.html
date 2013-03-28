@@ -270,7 +270,7 @@
                 },
                 socket: function(sid, type){
                    
-                    var iosocket = io.connect('http://preso.ly');
+                    var iosocket = io.connect('http://preso.ly:8080');
 
                     iosocket.on('connect', function () {
                         console.log(sid);

@@ -294,17 +294,17 @@
                     });
                     
                     iosocket.on('step1', function(data) {
-                        $('#step1').css('opacity','0.77');
+                        $('#step1').addClass('green-check');
                         $("#step1 .fui-checkmark-24").fadeIn(200);
                         console.log("...sync!");
                     });
                     iosocket.on('step2', function(data) {
-                        $('#step2').css('opacity','0.77');
+                        $('#step2').addClass('green-check');
                         $("#step2 .fui-checkmark-24").fadeIn(200);
                         console.log("...Logged in!");
                     }); 
                     iosocket.on('step3', function(data) {
-                        $('#step3').css('opacity','0.77');
+                        $('#step3').addClass('green-check');
                         $("#step3 .fui-checkmark-24").fadeIn(200);
                         console.log("...Starting show!");
                     }); 

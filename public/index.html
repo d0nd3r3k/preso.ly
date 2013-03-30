@@ -27,40 +27,48 @@
     </head>
     <body>
         <div class="mobile">
-            <div class="header">
-                <img src="images/logo.png"/>
-                <button type="button" class="mobile-nav btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="fui-menu-24"></span>
-                </button>
-            </div>
-            <div class="break-line"></div>
-            <div class="form-wrapper ">
-                <!-- Login Step 1 -->
-                <div class="login-form">
-                    <div class="ss-logo"><img src="images/slideshare-logo.png"/></div>
-                    <div class="control-group">
-                        <input type="text" class="login-field" value="" placeholder="SlideShare Username" id="login-name">
-                        <label class="login-field-icon fui-man-16" for="login-name"></label>
+
+            <div class="app-body"> 
+                <div class="header">
+                    <img src="images/logo.png"/>
+                    <button type="button" class="mobile-nav btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="fui-menu-24"></span>
+                    </button>
+                </div>
+                <div class="break-line"></div>
+                <div class="form-wrapper ">
+                    <!-- Login Step 1 -->
+                    <div class="login-form">
+                        <div class="ss-logo"><img src="images/slideshare-logo.png"/></div>
+                        <div class="control-group">
+                            <input type="text" class="login-field" value="" placeholder="SlideShare Username" id="login-name">
+                            <label class="login-field-icon fui-man-16" for="login-name"></label>
+                        </div>
+
+                        <a  class="log-in btn btn-primary btn-large btn-block" href="#">Login</a>
                     </div>
+                    <!-- End of Login -->
 
-                    <a  class="log-in btn btn-primary btn-large btn-block" href="#">Login</a>
                 </div>
-                <!-- End of Login -->
+                <div class="list-wrapper">
+                    <!-- List All Presentations -->
+                    <div class="list-pres span4"></div>
+
+                </div>
+                <div class="mini-player">
+                    <div class="ss-player"></div>
+                    <div class="controllers">
+                        <a class="button" id="previous"><span class="arrow">◀</span></a>
+                        <a class="button" id="next"><span class="arrow">▶</span></a>
+                        <a class="button" id="first"><span class="arrow">◀◀</span></a>
+                        <a class="button" id="last" ><span class="arrow">▶▶</span></a>
+                    </div>
+                </div>
 
             </div>
-            <div class="list-wrapper">
-                <!-- List All Presentations -->
-                <div class="list-pres span4"></div>
-
-            </div>
-            <div class="mini-player">
-                <div class="ss-player"></div>
-                <div class="controllers">
-                    <a class="button" id="previous"><span class="arrow">◀</span></a>
-                    <a class="button" id="next"><span class="arrow">▶</span></a>
-                    <a class="button" id="first"><span class="arrow">◀◀</span></a>
-                    <a class="button" id="last" ><span class="arrow">▶▶</span></a>
-                </div>
+            <div class="app-nav">
+                
+                
             </div>
 
         </div>
@@ -124,7 +132,7 @@
                             <h1>Hello, World.</h1>
                             <ol>
                                 <li id="step1">Scan QR Code with your smartphone <span class="fui-checkmark-24"></span><p class="sub-text">we recommend <a href="http://scan.me/apps/" target="_BLANK">Scan</a> app for both iOS and android</p></li>
-                                <li id="step2">Login with any <a href="http://slideshare.net" target="_BLANK">SlideShare</a> account <span class="fui-checkmark-24"></span> </li>
+                                <li id="step2">Login with any <a href="http://slideshare.net" target="_BLANK">slideshare</a> account <span class="fui-checkmark-24"></span> </li>
                                 <li id="step3"> Select a presentation, then control it via your mobile device! <span class="fui-checkmark-24"></span> </li>
                             </ol>
 
@@ -202,7 +210,28 @@
         <script src="js/xml2json.js"></script>
         <script src="js/jquery.qrcode-0.2.min.js"></script>
         <script type="text/javascript">
-            
+            $(document).ready(function(){
+                
+                var width = ($(window).width())*0.7;
+                
+                $(".mobile-nav").live("click",function(e){
+                    e.preventDefault();
+                    $(this).toggleClass('open-nav');
+                    
+                    if($(this).hasClass('open-nav')){
+                        
+                        $(".app-body").animate({
+                            left: width
+                        }, { duration: 300, queue: false });
+                    }
+                    else {
+                        $(".app-body").animate({
+                            left: 0
+                        }, { duration: 300, queue: false });
+                    }
+ 
+                });
+            });
             var app = {
                 init: function(){
                     var type = this.getType();
@@ -465,7 +494,8 @@
         }
                 
         jQuery(function($){
-            app.init();    
+            app.init();  
+            
                 
         });
         </script>

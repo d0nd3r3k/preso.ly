@@ -250,6 +250,8 @@ footer form {
     text-decoration: none; }
 .text-container ol{
     margin-left: 40px;
+    list-style: decimal;
+
 }
 .text-area{
     padding: 6px 20px;
@@ -260,6 +262,7 @@ footer form {
     color: #1abc9c;
     display: none;
     position: absolute;
+
     border-radius: 30px;
     background: #eceff1;
     padding: 5px 8px 1px 8px;
@@ -276,18 +279,21 @@ footer form {
 
 
 }
-#step2{
-    padding:12px 10px;
-    border-radius: 6px;
-}
 #step3 .fui-checkmark-24{
     margin-left: 178px;
+
 }
 #step1{
     padding: 0px 10px;
     border-radius: 6px;
 }
-
+#step2{
+    padding:12px 10px;
+    border-radius: 6px;
+}
+#step3{
+    padding-left: 10px;
+}
 .green-check{
     background: #1abc9c;
     color: #eceff1;
@@ -297,4 +303,6 @@ footer form {
     color: #eceff1;
     text-decoration: none;
 }
-
+footer .follow{
+    opacity: 0.7;
+}

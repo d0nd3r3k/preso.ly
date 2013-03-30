@@ -212,7 +212,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 
-                var width = ($(window).width())*0.7;
+                var width = ($(window).width())*0.84;
                 
                 $(".mobile-nav").live("click",function(e){
                     e.preventDefault();
@@ -222,12 +222,12 @@
                         
                         $(".app-body").animate({
                             left: width
-                        }, { duration: 300, queue: false });
+                        }, { duration: 240, queue: false });
                     }
                     else {
                         $(".app-body").animate({
                             left: 0
-                        }, { duration: 300, queue: false });
+                        }, { duration: 240, queue: false });
                     }
  
                 });

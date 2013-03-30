@@ -257,23 +257,33 @@ footer form {
     border-radius: 6px
 }
 .fui-checkmark-24{
-    color:#fff;
+    color: #1abc9c;
     display: none;
     position: absolute;
+    border-radius: 30px;
+    background: #eceff1;
+    padding: 5px 8px 1px 8px;
 }
 
 #step1 .fui-checkmark-24{
-    margin-top: 17px;
-    margin-left: 17px;
+    margin-top: 10px;
+    margin-left: 9px;
+
 }
 #step2 .fui-checkmark-24{
-    margin-left: 43px;
-    margin-top: 1px;
+    margin-left: 37px;
+    margin-top: -4px;
+
+
+}
+#step2{
+    padding:12px 10px;
+    border-radius: 6px;
 }
 #step3 .fui-checkmark-24{
     margin-left: 178px;
 }
-#step1, #step2, #step3{
+#step1{
     padding: 0px 10px;
     border-radius: 6px;
 }

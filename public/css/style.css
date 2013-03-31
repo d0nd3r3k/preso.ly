@@ -308,6 +308,7 @@ footer .follow{
 }
 .app-body{
     position: absolute;
+    overflow-x: hidden;
     left: 0;
     max-width: 640px;
     min-width: 320px;

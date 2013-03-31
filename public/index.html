@@ -31,7 +31,7 @@
             <div class="app-body"> 
                 <div class="header">
                     <img src="images/logo.png"/>
-                    <button type="button" class="mobile-nav btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <button type="button" class="mobile-nav btn btn-navbar button" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="fui-menu-24"></span>
                     </button>
                 </div>
@@ -45,7 +45,7 @@
                             <label class="login-field-icon fui-man-16" for="login-name"></label>
                         </div>
 
-                        <a  class="log-in btn btn-primary btn-large btn-block" href="#">Login</a>
+                        <a  class="log-in btn btn-primary btn-large btn-block button" href="#">Login</a>
                     </div>
                     <!-- End of Login -->
 
@@ -209,6 +209,7 @@
         <script src="js/jquery.placeholder.js"></script>
         <script src="js/xml2json.js"></script>
         <script src="js/jquery.qrcode-0.2.min.js"></script>
+        <script src="js/jquery-noclickdelay.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 
@@ -408,7 +409,7 @@
                                 block += '<img class="tile-image big-illustration" alt="" src="'+presentations[i].ThumbnailSmallURL+'">'
                                 block += '<h3 class="tile-title">'+presentations[i].Title+'</h3>';
                                 block += '<p>'+ presentations[i].Description +'</p>';
-                                block += '<a class="btn btn-primary btn-large btn-block present" data-id="'+presentations[i].ID+'">Present</a>';
+                                block += '<a class="btn button btn-primary btn-large btn-block present" data-id="'+presentations[i].ID+'">Present</a>';
                                 block += '</div></div>';
                                 $('.list-pres').append(block);
                             });

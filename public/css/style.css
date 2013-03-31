@@ -307,12 +307,12 @@ footer .follow{
     opacity: 0.7;
 }
 .app-body{
-    position: absolute;
-    overflow-x: hidden;
+    position: fixed;
     left: 0;
     max-width: 640px;
     min-width: 320px;
     z-index: 99999;
+    height: 100%;
     width: 100%;
     background: #34495e;
 }   

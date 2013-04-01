@@ -382,11 +382,11 @@
                         sendAPIMessage('last');
                     });
                     
-                    $$('.app-body').swipeLeft(function() {
+                    $$('.app-body').swipeRight(function() {
                         sendAPIMessage('previous');
                         iosocket.emit("previous", {"sid":sid});
                     });           
-                    $$('.app-body').swipeRight(function() {
+                    $$('.app-body').swipeLeft(function() {
                         sendAPIMessage('next');
                         iosocket.emit("next", {"sid":sid});
                     });            

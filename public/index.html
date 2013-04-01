@@ -381,11 +381,11 @@
                         sendAPIMessage('last');
                     });
                     
-                    $$('#slideshare_iframe').swipeLeft(function() {
+                    $$('.mobile iframe').swipeLeft(function() {
                             sendAPIMessage('previous');
                             iosocket.emit("previous", {"sid":sid});
                     });           
-                    $$('#slideshare_iframe').swipeRight(function() {
+                    $$('.mobile iframe').swipeRight(function() {
                             sendAPIMessage('next');
                             iosocket.emit("next", {"sid":sid});
                     });            

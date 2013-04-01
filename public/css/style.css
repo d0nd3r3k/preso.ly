@@ -98,7 +98,6 @@ footer{
         margin-top: 50px;
     }
     .list-pres{
-        display: none;
         margin: 0 auto;
     }
     .tile-title{
@@ -462,4 +461,7 @@ html[xmlns] .slides {display: block;}
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev {opacity: 1; left: 0;}
   .flex-direction-nav .flex-next {opacity: 1; right: 0;}
+}
+.pres-slider{
+    display:none;
 }

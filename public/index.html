@@ -417,7 +417,7 @@
                         $(this).text("loading...");
                         iosocket.on('presentations', function(data){
                             $(btn).text("success...");
-                            $(".login-form").delay(200).fadeOut(200);
+                            $(".login-form").fadeOut(200);
                             console.log(data);
                             var presentations = data.User.Slideshow;
                             //console.log(presentations);
@@ -432,11 +432,11 @@
                                 $('.list-pres').append(block);
                             });
                             
+                            $(".list-pres").delay(500).fadeIn();
+                            
                             $('.pres-slider').flexslider({
                                 animation: "slide"
                             });
-                            
-                            $(".list-pres").delay(500).fadeIn();
                             
                             $('.present').click(function(e){
                                 e.preventDefault();

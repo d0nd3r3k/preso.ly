@@ -433,10 +433,12 @@
                             });
                             
                             $('.pres-slider').flexslider({
-                                animation: "slide"
+                                animation: "slide",
+                                start: function(slider) {
+                                    $(".pres-slider").fadeIn(300);
+                                }
                             });
                             
-                            $(".pres-slider").fadeIn();
                             
                             
                             $('.present').click(function(e){

@@ -226,6 +226,7 @@
         <script src="js/jquery.qrcode-0.2.min.js"></script>
         <script src="js/jquery-noclickdelay.js"></script>
         <script src="js/jquery.flexslider.js"></script>
+        <script src="js/quo.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 
@@ -379,8 +380,15 @@
                     iosocket.on('last', function(data) {
                         sendAPIMessage('last');
                     });
-                                
-                                
+                    
+                    $$('.mobile').swipeLeft(function() {
+                            sendAPIMessage('previous');
+                            iosocket.emit("previous", {"sid":sid});
+                    });           
+                    $$('.mobile').swipeRight(function() {
+                            sendAPIMessage('next');
+                            iosocket.emit("next", {"sid":sid});
+                    });            
                     // register handler to receive messages
                     $(window).bind('message', receiveAPIMessage);
     

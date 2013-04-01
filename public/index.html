@@ -72,12 +72,13 @@
                 </section>
                 <div class="mini-player">
                     <div class="ss-player"></div>
-                    <div class="controllers">
+                    <!--<div class="controllers">
                         <a class="button" id="previous"><span class="arrow">◀</span></a>
                         <a class="button" id="next"><span class="arrow">▶</span></a>
                         <a class="button" id="first"><span class="arrow">◀◀</span></a>
                         <a class="button" id="last" ><span class="arrow">▶▶</span></a>
-                    </div>
+                    </div>-->
+                    
                 </div>
 
             </div>
@@ -381,13 +382,13 @@
                         sendAPIMessage('last');
                     });
                     
-                    $$('.mobile iframe').swipeLeft(function() {
-                            sendAPIMessage('previous');
-                            iosocket.emit("previous", {"sid":sid});
+                    $$('.app-body').swipeLeft(function() {
+                        sendAPIMessage('previous');
+                        iosocket.emit("previous", {"sid":sid});
                     });           
-                    $$('.mobile iframe').swipeRight(function() {
-                            sendAPIMessage('next');
-                            iosocket.emit("next", {"sid":sid});
+                    $$('.app-body').swipeRight(function() {
+                        sendAPIMessage('next');
+                        iosocket.emit("next", {"sid":sid});
                     });            
                     // register handler to receive messages
                     $(window).bind('message', receiveAPIMessage);

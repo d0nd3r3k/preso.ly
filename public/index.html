@@ -432,12 +432,13 @@
                                 $('.list-pres').append(block);
                             });
                             
-                            $(".list-pres").delay(500).fadeIn();
                             $('.pres-slider').flexslider({
                                 animation: "slide",
                                 slideshow: false,
                                 useCSS: false
                             });
+                            
+                            $(".list-pres").delay(500).fadeIn();
                             
                             $('.present').click(function(e){
                                 e.preventDefault();

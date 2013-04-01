@@ -196,6 +196,7 @@ footer{
     .controllers{
         width: 290px;
         margin: 2px auto;
+        text-align: center;
     }
     .login-form:before{
         display: none;

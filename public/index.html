@@ -442,8 +442,7 @@
                                 e.preventDefault();
                                 var pid = $(this).data('id');
                                 iosocket.emit("present", {"sid":sid,"pid": pid});
-                                $(".list-pres").hide();
-                                $('.header').hide();
+                                $('.pres-slider').hide();
                                 $(".mini-player").fadeIn(333);
                                 var iframe = ' <iframe id=slideshare_iframe src="http://www.slideshare.net/slideshow/embed_code/'+pid+'?jsapi=true" width="'+$(window).width()+'" height="'+$(window).height()*50/100+'" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>';
                                 $(".ss-player").append(iframe);

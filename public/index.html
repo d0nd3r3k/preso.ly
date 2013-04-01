@@ -417,8 +417,8 @@
                         $(this).text("loading...");
                         iosocket.on('presentations', function(data){
                             $(btn).text("success...");
-                            $(".login-form").fadeOut(200);
-                            console.log(data);
+                            $(".login-form").fadeOut();
+                            //console.log(data);
                             var presentations = data.User.Slideshow;
                             //console.log(presentations);
                             $.each(presentations, function(i, item) {

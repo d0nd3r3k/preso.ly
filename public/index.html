@@ -52,7 +52,10 @@
                 </div>
                 <div class="list-wrapper">
                     <!-- List All Presentations -->
-                    <div class="list-pres span4"></div>
+                    <div class="pres-slider">
+                    <ul class="slides list-pres span4" style="display: block;"></ul>
+                        
+                    </div>
 
                 </div>
                 <div class="mini-player">
@@ -67,8 +70,8 @@
 
             </div>
             <div class="app-nav">
-                
-                
+
+
             </div>
 
         </div>
@@ -210,8 +213,13 @@
         <script src="js/xml2json.js"></script>
         <script src="js/jquery.qrcode-0.2.min.js"></script>
         <script src="js/jquery-noclickdelay.js"></script>
+        <script src="js/jquery.flexslider.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
+                
+                $('.pres-slider').flexslider({
+                    animation: "slide"
+                });
                 
                 var width = ($(window).width())*0.84;
                 
@@ -404,13 +412,13 @@
                             var presentations = data.User.Slideshow;
                             //console.log(presentations);
                             $.each(presentations, function(i, item) {
-                                var block = '<div class="span4 block">';
+                                var block = '<li class="span4 block">';
                                 block += '<div class="tile">';
                                 block += '<img class="tile-image big-illustration" alt="" src="'+presentations[i].ThumbnailSmallURL+'">'
                                 block += '<h3 class="tile-title">'+presentations[i].Title+'</h3>';
                                 block += '<p>'+ presentations[i].Description +'</p>';
                                 block += '<a class="btn button btn-primary btn-large btn-block present" data-id="'+presentations[i].ID+'">Present</a>';
-                                block += '</div></div>';
+                                block += '</div></li>';
                                 $('.list-pres').append(block);
                             });
                             

@@ -163,7 +163,7 @@ footer{
         width:300px;
     }
     .break-line{
-        height: 70px;
+        height: 40px;
     }
     .mini-player{
         display: none;
@@ -326,4 +326,65 @@ footer .follow{
     left: 0px;
     top: 0px;
     z-index: 0;
+}
+.flex-control-nav {
+    text-align: center;
+}
+.flex-control-nav li {
+    margin: 0 6px;
+    display: inline-block;
+    zoom: 1;
+}
+.flex-control-paging li a.flex-active {
+    cursor: default;
+    background-color: #16a085;
+    border-color: #16a085;
+    text-decoration:none;
+}
+.flex-control-paging li a {
+    background: white;
+    border: 5px solid #d7dce0;
+    border-radius: 6px;
+    color: white;
+    line-height: 16px;
+    margin: 7px 2px 6px;
+    padding: 0 4px;
+    -webkit-transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
+    -moz-transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
+    -o-transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
+    transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
+    -webkit-backface-visibility: hidden;
+
+}
+.flex-viewport{
+ margin-bottom: -10px;   
+}
+.slides, .flex-control-nav, .flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.flex-direction-nav .flex-prev {
+    left: -36px;
+}
+.flex-direction-nav a {
+    width: 30px;
+    height: 30px;
+    margin: -20px 0 0;
+    display: block;
+    background: url(../images/bg_direction_nav.png) no-repeat 0 0;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+}
+.flexslider:hover .flex-next {
+    opacity: 0.8;
+    right: 5px;
+}
+.flex-direction-nav .flex-next {
+    background-position: 100% 0;
+    right: -36px;
 }

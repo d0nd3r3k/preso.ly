@@ -229,12 +229,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 
-                $('.pres-slider').flexslider({
-                    animation: "slide",
-                    slideshow: false,
-                    useCSS: false
-        
-                });
+                
                 
                 var width = ($(window).width())*0.84;
                 
@@ -438,6 +433,11 @@
                             });
                             
                             $(".list-pres").delay(500).fadeIn();
+                            $('.pres-slider').flexslider({
+                                animation: "slide",
+                                slideshow: false,
+                                useCSS: false
+                            });
                             
                             $('.present').click(function(e){
                                 e.preventDefault();

@@ -466,3 +466,6 @@ html[xmlns] .slides {display: block;}
 .pres-slider{
     display:none;
 }
+.hn-share-iframe{
+    margin: 0px 0 2px -25px;
+}

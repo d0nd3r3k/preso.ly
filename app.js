@@ -28,6 +28,7 @@ io.set('transports', [
     , 'xhr-polling'
     , 'jsonp-polling'
     ]);
+    
 io.set('authorization', function (data, accept) {
     return accept(null, true);  
 }).sockets.on('connection', function(socket){
@@ -43,6 +44,9 @@ io.set('authorization', function (data, accept) {
         }
         
     });
+    socket.on('error',function(data){
+        console.log(data);
+    })
     
     socket.on('login', function(data){
         var username = data.username; 

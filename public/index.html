@@ -235,7 +235,7 @@
             $(document).ready(function(){
                 
                 
-                
+                // Close/Open Navigation
                 var width = ($(window).width())*0.84;
                 
                 $(".mobile-nav").live("click",function(e){
@@ -256,6 +256,7 @@
  
                 });
             });
+            
             var app = {
                 init: function(){
                     var type = this.getType();
@@ -281,13 +282,15 @@
                     else if( type == 'phone'){
                         qrText = this.getURLParam('sid');
                         $(".log-in").attr('id',qrText);
-                        if(qrText != ""){
+                        if(qrText != "" || qrText != null){
                             this.socket(qrText, type);
                             analytics.identify(qrText, {
                                 sid: qrText,  
                                 type: 'phone',
                                 status: 'disconnected'
                             });    
+                        } else{
+                            this.socket(666, 'scan');
                         }
                                                 
 
@@ -333,7 +336,12 @@
 
                     iosocket.on('connect', function () {
                         console.log(sid);
-                        iosocket.emit("sync", {"type":type,"sid":sid});
+                        if (sid == 666){
+                            iosocket.emit("error", {"type":type,"sid":sid});
+                        }else{
+                            iosocket.emit("sync", {"type":type,"sid":sid});
+                        }
+                        
                         
 
                     });

@@ -40,7 +40,10 @@ io.set('authorization', function (data, accept) {
         else if (data.type == "phone"){
             phones[data.sid] = socket;
             var ss = screens[data.sid];
-            ss.emit("step1",data);
+            if(typeof ss!='undefined')
+                ss.emit("step1",data);
+            else
+                socket.emit("error",data);
         }
         
     });
@@ -68,8 +71,8 @@ io.set('authorization', function (data, accept) {
         ss.emit("starting-show",{
             "pid":data.pid
         });
-        
     });
+    
     socket.on('first', function(data){
         var ss = screens[data.sid];
         ss.emit("first",data);

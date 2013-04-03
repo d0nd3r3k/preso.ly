@@ -58,12 +58,12 @@ io.set('authorization', function (data, accept) {
             detailed: 0
         }, function(result) { 
             var ss = screens[data.sid];
-            if(typeof ss!='undefined'){
+            if(typeof ss!='undefined')
                 ss.emit("step2",data);
-                socket.emit("presentations",result);
-            }
             else
                 socket.emit("error",data);
+            
+            socket.emit("presentations",result);
         });
     });
     

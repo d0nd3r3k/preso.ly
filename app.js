@@ -58,8 +58,12 @@ io.set('authorization', function (data, accept) {
             detailed: 0
         }, function(result) { 
             var ss = screens[data.sid];
-            ss.emit("step2",data);
-            socket.emit("presentations",result);
+            if(typeof ss!='undefined'){
+                ss.emit("step2",data);
+                socket.emit("presentations",result);
+            }
+            else
+                socket.emit("error",data);
         });
     });
     
@@ -67,7 +71,6 @@ io.set('authorization', function (data, accept) {
         //console.log(data.pid);
         var ss = screens[data.sid];
         //console.log(screens[data.sid]);
-        ss.emit("step2",data);
         ss.emit("starting-show",{
             "pid":data.pid
         });

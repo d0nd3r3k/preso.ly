@@ -34,6 +34,7 @@ io.set('authorization', function (data, accept) {
 }).sockets.on('connection', function(socket){
     
     socket.on('sync',function(data){
+        console.log(data);
         if(data.type == "screen"){
             screens[data.sid] = socket;
         }

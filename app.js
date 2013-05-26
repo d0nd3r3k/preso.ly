@@ -33,7 +33,6 @@ io.set('authorization', function (data, accept) {
     return accept(null, true);  
 }).sockets.on('connection', function(socket){
     console.log(socket);
-    console.log("Foo");
     socket.on('sync',function(data){
         console.log(data);
         if(data.type == "screen"){
